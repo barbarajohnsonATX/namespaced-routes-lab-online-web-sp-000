@@ -1,2 +1,2 @@
-class Admin::StatsController < ApplicationController
+class Admin::PController < ApplicationController
 end 
