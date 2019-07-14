@@ -25,7 +25,15 @@ class SongsController < ApplicationController
   end
 
   def new
-    @song = Song.new
+   # @song = Song.new
+   #redirect when access is turned off
+    @preference = Preference.first
+    if @preference.allow_create_songs
+      @song = Song.new
+    else
+      redirect_to songs_path
+    end
+    
   end
 
   def create
